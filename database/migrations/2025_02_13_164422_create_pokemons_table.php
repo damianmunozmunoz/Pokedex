@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('id_tipo');
             $table->integer('id_generacion');
             $table->integer('id_objeto');
-            $table->integer('is_equipo');
+            $table->integer('id_equipo');
             $table->timestamps();
         });
     }
