@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('genero');
             $table->integer('id_tipo');
             $table->integer('id_generacion');
-            $table->integer('id_objeto');
-            $table->integer('id_equipo');
+            $table->integer('id_objeto')->nullable();
+            $table->integer('id_equipo')->nullable();
             $table->timestamps();
         });
     }
