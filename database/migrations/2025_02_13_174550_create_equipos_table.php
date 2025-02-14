@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->string('id_pokemon');
             $table->string('id_entrenador');
             $table->timestamps();
         });
