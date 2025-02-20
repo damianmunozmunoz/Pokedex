@@ -21,7 +21,7 @@ class PokemonsController extends Controller
     */
     public function crear()
     {
-        return view('pokemon/form');
+        return view('pokemons/form');
     }
     public function almacenar(Request $r)
     {
@@ -35,11 +35,11 @@ class PokemonsController extends Controller
         $p->id_objeto = $r->id_objeto;
         $p->id_equipo = $r->id_equipo;
         $p->save();
-        return redirect()->route('pokemon.index');
+        return redirect()->route('pokemons.index');
     }
     public function editar($id){
         $pokemon = Pokemon::find($id);
-        return view('pokemon/form', ['pokemon' => $pokemon]);
+        return view('pokemons/form', ['pokemon' => $pokemon]);
     }
     public function modificar($id, Request $r){
         $p = Pokemon::find($id);
@@ -53,11 +53,11 @@ class PokemonsController extends Controller
         $p->id_objeto = $r->id_objeto;
         $p->id_equipo = $r->id_equipo;
         $p->save();
-        return redirect()->route('pokemon.index');
+        return redirect()->route('pokemons.index');
     }
     public function borrar($id){
         $p = Pokemon::find($id);
         $p->delete();
-        return redirect()->route('pokemon.index');
+        return redirect()->route('pokemons.index');
     }
 }

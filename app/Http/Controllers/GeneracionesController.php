@@ -27,7 +27,7 @@ class GeneracionesController extends Controller
         $generacion = Generacion::find($id);
         return view('generaciones/form',['generacion' => $generacion]);
     }
-    public function actualizar($id, Request $r){
+    public function modificar($id, Request $r){
         $p = Generacion::find($id);
         $p->nombre=$r->nombre;
         $p->cantidad=$r->cantidad;
@@ -40,5 +40,4 @@ class GeneracionesController extends Controller
         $p->delete();
         return redirect()->route('generaciones.index');
     }
-
 }

@@ -30,7 +30,7 @@ class ObjetosController extends Controller
         $objeto = Objeto::find($id);
         return view('objetos/form', ['objeto' => $objeto]);
     }
-    public function actualizar($id,Request $r){
+    public function modificar($id,Request $r){
         $p = Objeto::find($id);
         $p->nombre = $r->nombre;
         $p->descripcion = $r->descripcion;
