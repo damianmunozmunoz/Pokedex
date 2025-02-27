@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipos', function (Blueprint $table) {
+        Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->integer('id_generacion');
+            $table->unsignedBigInteger('id_entrenador');
+
+            $table->foreign('id_entrenador')->references('id')->on('entrenadores')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipos');
+        Schema::dropIfExists('equipos');
     }
 };
