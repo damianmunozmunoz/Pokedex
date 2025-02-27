@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->string('id_entrenador');
+            $table->unsignedBigInteger('id_entrenador');
+
+            $table->foreign('id_entrenador')->references('id')->on('entrenadores')->onDelete('cascade');
+            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
