@@ -24,4 +24,5 @@ class Pokemon extends Model
     public function equipo(){
         return $this->belongsTo('App\Models\Equipo');
     }
+    protected $table = 'pokemons';
 }

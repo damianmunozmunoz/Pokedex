@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 Route::get('/main', function () {
     return view('main');
-});
+})->name('main');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,6 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('pokemon','PokemonsController');
-Route::get('pokemon/delete/{pokemon}','PokemonsController@borrar');
+Route::resource('pokemons','PokemonsController');
+Route::get('pokemons/delete/{pokemon}','PokemonsController@borrar');
 require __DIR__.'/auth.php';

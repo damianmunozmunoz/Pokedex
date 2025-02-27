@@ -13,7 +13,7 @@ body{
 header{
     height: 20vh;
     min-width: 100vw;
-    background-color: black;
+    background-color: rgb(255, 115, 0);
     font-size: 1.5em;
     color: white;
     display: flex;
@@ -30,7 +30,7 @@ section{
 nav{
     min-height: 40vh;
     min-width: 15%;
-    background-color: gray;
+    background-color: rgb(231, 178, 78);
 }
 
 main{
@@ -41,6 +41,7 @@ main{
     align-items: top center;
     justify-content: top center;
     padding: 5%;
+    
 }
 
 main>h1{
@@ -68,16 +69,10 @@ td, th {
     border: none;
 }
 
-aside{
-    min-height: 40vh;
-    min-width: 15%;
-    background-color: gray;
-}
-
 footer{
     height: 20vh;
     min-width: 100vw;
-    background-color: black;
+    background-color: rgb(255, 123, 0);
 }
 
 .centrado{
