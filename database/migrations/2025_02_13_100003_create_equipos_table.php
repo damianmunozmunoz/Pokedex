@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('generacion', function (Blueprint $table) {
+        Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->integer('cantidad');
-            $table->date('fecha_añadido');
+            $table->unsignedBigInteger('id_entrenador');
+
+            $table->foreign('id_entrenador')->references('id')->on('entrenadores')->onDelete('cascade');
+            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('generacion');
+        Schema::dropIfExists('equipos');
     }
 };

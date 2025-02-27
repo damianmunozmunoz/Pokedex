@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
             GeneracionTableSeeder::class,
             TiposTableSeeder::class,
             ObjetosTableSeeder::class,
-            PokemonsTableSeeder::class,
+            EntrenadoresTableSeeder::class,
             EquiposTableSeeder::class,
-            EntrenadoresTableSeeder::class
+            PokemonsTableSeeder::class
         ]);
     }
 }

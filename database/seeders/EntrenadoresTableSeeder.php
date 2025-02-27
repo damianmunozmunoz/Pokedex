@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class EntrenadoresTableSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class EntrenadoresTableSeeder extends Seeder
         DB::table('entrenadores')->insert([
             'correo' => 'admin@gmail.com',
             'nombre' => 'admin',
-            'password' => 'admin',
+            'password' => Hash::make('admin'),
             'nacimiento' => '1970-01-01'
         ]);
     }
