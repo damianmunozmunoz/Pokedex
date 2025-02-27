@@ -17,10 +17,10 @@ return new class extends Migration
             $table->double('peso');
             $table->double('altura');
             $table->string('genero');
-            $table->integer('id_tipo');
-            $table->integer('id_generacion');
-            $table->integer('id_objeto')->nullable();
-            $table->integer('id_equipo')->nullable();
+            $table->foreign('id_tipo')->references('id')->on('tipos')->onDelete('cascade');
+            $table->foreign('id_generacion')->references('id')->on('generacion')->onDelete('cascade');
+            $table->foreign('id_objeto')->references('id')->on('objetos')->onDelete('cascade')->nullable();
+            $table->foreign('id_equipo')->references('id')->on('equipos')->onDelete('cascade')->nullable();
             $table->timestamps();
         });
     }
