@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->integer('cantidad');
             $table->date('fecha_añadido');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

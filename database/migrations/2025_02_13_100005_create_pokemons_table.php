@@ -26,7 +26,9 @@ return new class extends Migration
             $table->foreign('id_generacion')->references('id')->on('generacion')->onDelete('cascade');
             $table->foreign('id_objeto')->references('id')->on('objetos')->onDelete('cascade');
             $table->foreign('id_equipo')->references('id')->on('equipos')->onDelete('cascade');
+            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

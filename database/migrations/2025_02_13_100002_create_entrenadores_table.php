@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('password');
             $table->date('nacimiento');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
