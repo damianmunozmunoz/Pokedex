@@ -22,12 +22,9 @@
             
             @show
         </main>
-<<<<<<< HEAD
-=======
         <!-- <aside>
             @yield('aside')
         </aside> -->
->>>>>>> c2d1a7164ea702d8932c367328e3c379cfd089a2
         </section>
         <footer>
             @yield('footer')
