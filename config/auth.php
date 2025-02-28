@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'entrenadores',
+            'provider' => 'users',
         ],
     ],
 
@@ -60,7 +60,7 @@ return [
     */
 
     'providers' => [
-        'entrenadores' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\Entrenador::class,
         ],

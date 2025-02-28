@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PokemonsController;
 use App\Http\Controllers\ProfileController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::resource('pokemons','PokemonsController')->middleware('auth');
+Route::resource('pokemons', 'PokemonsController')->middleware('auth');
 Route::get('pokemons/delete/{pokemon}', 'PokemonsController@destroy');
 Route::resource('objetos','ObjetosController');
 Route::get('objetos/delete/{objeto}', 'ObjetosController@destroy');

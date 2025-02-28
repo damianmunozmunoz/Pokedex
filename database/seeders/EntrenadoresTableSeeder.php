@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Entrenador;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -14,10 +15,10 @@ class EntrenadoresTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('entrenadores')->insert([
+         DB::table('entrenadores')->insert([
             'email' => 'admin@gmail.com',
             'name' => 'admin',
-            'password' => Hash::make('admin'),
-        ]);
+            'password' => 'admin',
+        ]); 
     }
 }
