@@ -9,7 +9,7 @@ class EquiposController extends Controller
 {
     public function index()
     {
-        $listaEquipos = Equipo::all();
+        $listaEquipos = Equipo::paginate(10);
         return view('equipos/all', ['listaEquipos' => $listaEquipos]);
     }
     /*
@@ -19,29 +19,28 @@ class EquiposController extends Controller
         return view('equipos.show', $data);
     }
     */
-    public function crear()
+    public function create()
     {
         return view('equipos/form');
     }
-    public function almacenar(Request $r)
+    public function store(Request $r)
     {
         $p = new Equipo();
         $p->id_entrenador=$r->id_entrenador;
         $p->save();
         return redirect()->route('equipos.index');
     }
-    public function editar($id){
+    public function edit($id){
         $equipo = Equipo::find($id);
         return view('equipos/form', ['equipo' => $equipo]);
     }
-    public function modificar($id, Request $r){
+    public function update($id, Request $r){
         $p = Equipo::find($id);
-        $p = new Equipo();
         $p->id_entrenador = $r->id_entrenador;
         $p->save();
         return redirect()->route('equipos.index');
     }
-    public function borrar($id){
+    public function destroy($id){
         $p = Equipo::find($id);
         $p->delete();
         return redirect()->route('equipos.index');

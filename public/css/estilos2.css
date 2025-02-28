@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    height: 20vh;
+    min-width: 100vw;
+    background-color: red;
+    /* background-color: rgb(46, 46, 252); */
+    font-family: 'Pokemon Solid', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 5px solid black;
+}
+header>h1{
+    font-size: 100px;
+    margin-left: 70px;
+    color: yellow;
+    padding-bottom: 20px;
+    -webkit-text-stroke: 2px black;
+}
+.bola{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 100%;
+    top:7vw;
+    position:absolute;
+    z-index: 1;
+    left: 47.7%;
+    border: 5px solid black;
+}
+section{
+    display: flex;
+    min-height: 70vh;
+    min-width: 100vw;
+    background-color: rgb(156, 156, 156);
+}
+
+main{
+    min-height: 60vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: top center;
+    justify-content: top center;
+    padding: 5%;
+}
+
+main>h1{
+    font-size: xx-large;
+}
+
+ul {
+    padding-left: 15px;
+}
+table{
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+footer{
+    height: 10vh;
+    min-width: 100vw;
+    border-top: 5px solid black;
+    background-color: white;
+}
+
+fieldset{
+    width: 80%;
+}
+
+.tablador{
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+}
