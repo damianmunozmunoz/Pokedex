@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Entrenador extends Authenticatable
 {
     use SoftDeletes;
-    use Notifiable;
 
     protected $fillable = [
         'email',
@@ -20,18 +19,6 @@ class Entrenador extends Authenticatable
     protected $hidden = [
         'password',
         'remember-token'
-    ];
-    
-    protected $fillable = [
-        'correo',
-        'nombre',
-        'password',
-        'nacimiento'
-    ];
-
-    protected $hidden = [
-        'password',
-        'remember_token'
     ];
     
     public function equipo(){
