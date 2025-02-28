@@ -13,53 +13,36 @@ body{
 header{
     height: 20vh;
     min-width: 100vw;
-    background-color: red;
-    /* background-color: rgb(46, 46, 252); */
+    background-color: #A29BFE;
+    font-size: 40px;
     font-family: 'Pokemon Solid', sans-serif;
+    color: white;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    border-bottom: 5px solid black;
+    justify-content: flex-start; 
 }
 header>h1{
-    font-size: 100px;
-<<<<<<< HEAD
-    margin-left: 90px;
-    color: #ffcc00;
-    padding-bottom: 20px;
-    text-shadow: 3px 3px 0px #3366cc, 6px 6px 0px black;
-=======
-    margin-left: 70px;
+    margin-left: 30px;
     color: yellow;
     padding-bottom: 20px;
-    -webkit-text-stroke: 2px black;
->>>>>>> master
 }
-.bola{
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border-radius: 100%;
-    top:7vw;
-    position:absolute;
-    z-index: 1;
-<<<<<<< HEAD
-    left: 47.5%;
-=======
-    left: 47.7%;
->>>>>>> master
-    border: 5px solid black;
-}
+
 section{
     display: flex;
     min-height: 70vh;
     min-width: 100vw;
-    background-color: rgb(156, 156, 156);
+    background-color: #FAF3DD;
+}
+
+nav{
+    min-height: 40vh;
+    min-width: 12%;
+    background-color: #B5EAD7;
 }
 
 main{
-    min-height: 60vh;
-    min-width: 100%;
+    min-height: 40vh;
+    min-width: 60%;
     display: flex;
     flex-direction: column;
     align-items: top center;
@@ -86,8 +69,7 @@ td, th {
 footer{
     height: 10vh;
     min-width: 100vw;
-    border-top: 5px solid black;
-    background-color: white;
+    background-color: #A29BFE;
 }
 
 fieldset{

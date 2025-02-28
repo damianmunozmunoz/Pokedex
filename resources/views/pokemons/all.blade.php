@@ -2,7 +2,11 @@
 
 @section('title', 'Pokedex')
 
+<<<<<<< HEAD
 @section('header', 'Pokémon')
+=======
+@section('header', 'Pokemon')
+>>>>>>> master
 
 @section('content')
 
@@ -13,7 +17,10 @@
         <th>Peso</th>
         <th>Altura</th>
         <th>Genero</th>
+<<<<<<< HEAD
         <th colspan="2">Opciones</th>
+=======
+>>>>>>> master
     </tr>
     @foreach ($listaPokemons as $pokemon)
         <tr>
