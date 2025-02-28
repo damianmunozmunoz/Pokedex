@@ -19,16 +19,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-<<<<<<< HEAD
 Route::resource('pokemons','PokemonsController')->middleware('auth');
 Route::get('pokemons/delete/{pokemon}', 'PokemonsController@destroy');
 Route::resource('objetos','ObjetosController');
 Route::get('objetos/delete/{objeto}', 'ObjetosController@destroy');
 Route::resource('tipos','TiposController');
 Route::get('tipos/delete/{tipo}', 'TiposController@destroy');
-=======
-
-Route::resource('pokemons', 'PokemonsController')->middleware('auth');
-
->>>>>>> master
 require __DIR__.'/auth.php';
