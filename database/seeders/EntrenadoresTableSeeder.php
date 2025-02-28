@@ -15,10 +15,9 @@ class EntrenadoresTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('entrenadores')->insert([
-            'correo' => 'admin@gmail.com',
-            'nombre' => 'admin',
+            'email' => 'admin@gmail.com',
+            'name' => 'admin',
             'password' => Hash::make('admin'),
-            'nacimiento' => '1970-01-01'
         ]);
     }
 }
