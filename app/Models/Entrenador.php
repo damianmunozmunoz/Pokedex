@@ -13,8 +13,8 @@ class Entrenador extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name',
         'email',
+        'name',
         'password'
     ];
     
@@ -26,4 +26,6 @@ class Entrenador extends Authenticatable
     public function equipo(){
         return $this->hasOne('App\Models\Equipo');
     }
+
+    protected $table = 'entrenadores';
 }
