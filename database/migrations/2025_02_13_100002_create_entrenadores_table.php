@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('entrenadores', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->string('name');
+            $table->string('correo')->unique();
+            $table->string('nombre');
             $table->string('password');
-
+            $table->date('nacimiento');
+            
+            $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });

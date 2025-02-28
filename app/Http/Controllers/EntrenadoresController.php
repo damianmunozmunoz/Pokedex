@@ -9,7 +9,7 @@ class EntrenadoresController extends Controller
 {
     public function index()
     {
-        $listaEntrenadores=Entrenador::all();
+        $listaEntrenadores=Entrenador::paginate(10);
         return view('entrenadores/all', ['listaEntrenadores' => $listaEntrenadores]);
     }
     /*
@@ -19,11 +19,11 @@ class EntrenadoresController extends Controller
         return view('entrenadores.show', $data);
     }
     */
-    public function crear()
+    public function create()
     {
         return view('entrenadores/form');
     }
-    public function almacenar(Request $r)
+    public function store(Request $r)
     {
         $p = new Entrenador();
         $p->correo=$r->correo;
@@ -33,11 +33,11 @@ class EntrenadoresController extends Controller
         $p->save();
         return redirect()->route('entrenadores.index');
     }
-    public function editar($id){
+    public function edit($id){
         $entrenador = Entrenador::find($id);
         return view('entrenadores/form', ['entrenador' => $entrenador]);
     }
-    public function modificar($id, Request $r){
+    public function update($id, Request $r){
         $p = Entrenador::find($id);
         $p = new Entrenador();
         $p->correo=$r->correo;
@@ -47,7 +47,7 @@ class EntrenadoresController extends Controller
         $p->save();
         return redirect()->route('entrenadores.index');
     }
-    public function borrar($id){
+    public function destroy($id){
         $p=Entrenador::find($id);
         $p->delete();
         return redirect()->route('entrenadores.index');
