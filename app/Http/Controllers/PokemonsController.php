@@ -9,7 +9,7 @@ class PokemonsController extends Controller
 {
     public function index()
     {
-        $listaPokemons = Pokemon::all();
+        $listaPokemons = Pokemon::paginate(25);
         return view('pokemons/all', ['listaPokemons' => $listaPokemons]);
     }
     /*
@@ -38,8 +38,13 @@ class PokemonsController extends Controller
         return redirect()->route('pokemons.index');
     }
     public function edit($id){
+<<<<<<< HEAD
         $pokemons = Pokemon::find($id);
         return view('pokemons/form', ['pokemons' => $pokemons]);
+=======
+        $pokemon = Pokemon::find($id);
+        return view('pokemons/form', ['pokemon' => $pokemon]);
+>>>>>>> c2d1a7164ea702d8932c367328e3c379cfd089a2
     }
     public function update($id, Request $r){
         $p = Pokemon::find($id);

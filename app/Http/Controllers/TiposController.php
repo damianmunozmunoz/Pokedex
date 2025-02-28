@@ -9,7 +9,7 @@ class TiposController extends Controller
 {
     public function index()
     {
-        $listaTipos = Tipo::all();
+        $listaTipos = Tipo::paginate(10);
         return view('tipos/all', ['listaTipos' => $listaTipos]);
     }
     /*
@@ -19,11 +19,11 @@ class TiposController extends Controller
         return view('tipos.show', $data);
     }
     */
-    public function crear()
+    public function create()
     {
         return view('tipos/form');
     }
-    public function almacenar(Request $r)
+    public function store(Request $r)
     {
         $p = new Tipo();
         $p->nombre = $r->nombre;
@@ -31,19 +31,18 @@ class TiposController extends Controller
         $p->save();
         return redirect()->route('tipos.index');
     }
-    public function editar($id){
+    public function edit($id){
         $tipo = Tipo::find($id);
         return view('tipos/form', ['tipo' => $tipo]);
     }
-    public function modificar($id, Request $r){
+    public function update($id, Request $r){
         $p = Tipo::find($id);
-        $p = new Tipo();
         $p->nombre = $r->nombre;
         $p->id_generacion = $r->id_generacion;
         $p->save();
         return redirect()->route('tipos.index');
     }
-    public function borrar($id){
+    public function destroy($id){
         $p = Tipo::find($id);
         $p->delete();
         return redirect()->route('tipos.index');

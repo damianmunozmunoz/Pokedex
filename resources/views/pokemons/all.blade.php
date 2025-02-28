@@ -1,44 +1,44 @@
-@extends("master")
+@extends('master')
 
-@section("title", "Administración de pokemons")
+@section('title', 'Pokedex')
 
-@section("header", "Administración de Pokemon")
+@section('header', 'Pokemon')
 
-@section("content")
-    
-@section("main_title", "Listado de pokemons")
+@section('content')
 
-
-    
-    <table border='0' class="table table-dark">
+@section('main_title', 'Lista de Pokemon')
+<table class="table table-striped table-secondary align-center">
+    <tr>
+        <th>Nombre</th>
+        <th>Peso</th>
+        <th>Altura</th>
+        <th>Genero</th>
+    </tr>
+    @foreach ($listaPokemons as $pokemon)
         <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Peso</th>
-            <th scope="col">Altura</th>
-            <th scope="col">Genero</th>
-        </tr>
-    @foreach ($listaPokemons as $pokemon) <!-- Si el controlador devuelve una "lista de producto", los datos se insertan en una tabla mostrando el "name", "description" y "price". -->
-        <tr>
-            <td scope="row">{{$pokemon->nombre}}</td>
-            <td>{{$pokemon->peso}}</td>
-            <td>{{$pokemon->altura}}</td>
-            <td>{{$pokemon->altura}}</td>
-            <td class="sinbordes">
-                <a href="{{route('pokemons.edit', $pokemon->id)}}">Modificar</a></td>
-            <td class="sinbordes">
-                <form action = "{{route('pokemons.destroy', $pokemon->id)}}" method="POST">
+            <td>{{ $pokemon->nombre }}</td>
+            <td>{{ $pokemon->peso }}</td>
+            <td>{{ $pokemon->altura }}</td>
+            <td>{{ $pokemon->genero }}</td>
+            <td><a class="btn btn-primary" href="{{ route('pokemons.edit', $pokemon->id) }}">Editar</a></td>
+            <td>
+                <form action="{{ route('pokemons.destroy', $pokemon->id) }}">
                     @csrf
                     @method("DELETE")
-                    <input type="submit" value="Borrar">
+                    <input class="btn btn-danger"  type="submit" value="Eliminar">
                 </form>
             </td>
         </tr>
-    
     @endforeach
-    </table><br>
-    <a href="{{ route('pokemons.create') }}">Nuevo pokemon</a><br><br><br>
-    <form class="centrado" action="{{route('main')}}">
-        <input class="btn btn-success" type="submit" value="MENÚ PRINCIPAL">
+</table><br>
+<div class="d-flex justify-content-around h-auto">
+    <div>
+        {{ $listaPokemons->links() }} <!-- Paginación -->
+    </div>
+    <a class="btn btn-success" href="{{ route('pokemons.create') }}">Nuevo Pokemon</a>
+    <form action="{{ route('main') }}">
+        <input class="btn btn-info" type="submit" value="MAIN">
     </form>
+</div>
 @endsection
 
