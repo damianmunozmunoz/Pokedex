@@ -9,7 +9,7 @@ class PokemonsController extends Controller
 {
     public function index()
     {
-        $listaPokemons = Pokemon::all();
+        $listaPokemons = Pokemon::paginate(25);
         return view('pokemons/all', ['listaPokemons' => $listaPokemons]);
     }
     /*
@@ -19,11 +19,11 @@ class PokemonsController extends Controller
         return view('pokemon.show', $data);
     }
     */
-    public function crear()
+    public function create()
     {
         return view('pokemons/form');
     }
-    public function almacenar(Request $r)
+    public function store(Request $r)
     {
         $p = new Pokemon();
         $p->nombre = $r->nombre;
@@ -37,13 +37,12 @@ class PokemonsController extends Controller
         $p->save();
         return redirect()->route('pokemons.index');
     }
-    public function editar($id){
+    public function edit($id){
         $pokemon = Pokemon::find($id);
         return view('pokemons/form', ['pokemon' => $pokemon]);
     }
-    public function modificar($id, Request $r){
+    public function update($id, Request $r){
         $p = Pokemon::find($id);
-        $p = new Pokemon();
         $p->nombre = $r->nombre;
         $p->peso = $r->peso;
         $p->altura = $r->altura;
@@ -55,7 +54,7 @@ class PokemonsController extends Controller
         $p->save();
         return redirect()->route('pokemons.index');
     }
-    public function borrar($id){
+    public function destroy($id){
         $p = Pokemon::find($id);
         $p->delete();
         return redirect()->route('pokemons.index');
