@@ -20,7 +20,6 @@ class Entrenador extends Authenticatable
         'password',
         'remember-token'
     ];
-    
     public function equipo(){
         return $this->hasOne('App\Models\Equipo');
     }
