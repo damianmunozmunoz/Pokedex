@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::resource('pokemons', 'PokemonsController')->middleware('auth');
+Route::resource('pokemons', 'PokemonsController');
 Route::get('pokemons/delete/{pokemon}', 'PokemonsController@destroy');
 Route::resource('objetos','ObjetosController');
 Route::get('objetos/delete/{objeto}', 'ObjetosController@destroy');
